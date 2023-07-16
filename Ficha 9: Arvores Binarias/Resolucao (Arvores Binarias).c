@@ -90,22 +90,23 @@ struct nodo * procura (ABin a, int x){
 
 
     if(v<x)
-    procura(a->dir,x);
+    return procura(a->dir,x);
 
     if(v>x)
-    procura(a->esq,x);
+    return procura(a->esq,x);
 }
 
 
 int nivel (ABin a, int x){
-    int l = 0, v = a->valor;
+    int l = 0, v;
 
     while(a!=NULL){
+        v = a->valor;
         if(v==x)
         return l;
 
 
-        if(v<x){
+        if(x>v){
             l++;
             a=a->dir;
         }
