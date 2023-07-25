@@ -1,5 +1,3 @@
-#include "../Headers/Ficha 3 (Vectores de Inteiros).h"
-
 #include <stdio.h>
 
 

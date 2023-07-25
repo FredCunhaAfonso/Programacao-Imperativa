@@ -1,5 +1,3 @@
-#include "../Headers/Ficha 4 (Strings).h"
-
 #include <stdio.h>
 #include <string.h>
 

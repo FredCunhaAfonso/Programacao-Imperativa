@@ -1,5 +1,3 @@
-#include "../Headers/Ficha 4 (Arrays Ordenados).h"
-
 #include <stdio.h>
 
 int ordenado (int v[], int N){
