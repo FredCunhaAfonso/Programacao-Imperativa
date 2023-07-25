@@ -1,4 +1,7 @@
+#include "../Headers/Ficha 4 (Strings).h"
+
 #include <stdio.h>
+#include <string.h>
 
 int detetorDeVogais(char c){
     if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u'||c=='A'||c=='E'||c=='I'||c=='O'||c=='U')
@@ -6,21 +9,6 @@ int detetorDeVogais(char c){
 
     return 0;
 }
-
-int tamanhoDaString(char *s){
-    int tamanho;
-    for(tamanho=0;*(s+tamanho)!='\0';tamanho++);
-    return tamanho;
-}
-
-void InsereChar(char * s, char c, int local){
-    for(int i = tamanhoDaString(s);i>local;i--)
-    *(s+i)=*(s+i-1);
-
-    *(s+local)=c;
-}
-
-
 
 int contaVogais (char *s){
     int vogais=0;
@@ -48,27 +36,18 @@ int retiraVogaisRep (char *s){
 }
 
 int duplicaVogais (char *s){
-    int contaVogaisDup=0;
-    char c;
-    for(int i = 0; *(s+i)!='\0';i++)
+    int contaVogaisDup=0, l = strlen(s);
+    for(int i = 0; i<strlen(s);i++)
         if(detetorDeVogais(*(s+i))){
-            c = *(s+i);
-            InsereChar(s,c,i);
+	    for(int aux = strlen(s); aux!=i;aux--)
+	    *(s+aux)=*(s+aux-1);
             
             i++;
             contaVogaisDup++;
         }
+        
+        *(s+l+contaVogaisDup)='\0';        
+        
 
     return contaVogaisDup;
-}
-
-
-
-
-int main(){
-    char s[50]="Esta e uma string com duplicados";
-    int x = duplicaVogais(s);
-
-    printf("%d\n%s\n",x,s);
-    return 0;
 }

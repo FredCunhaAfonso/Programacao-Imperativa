@@ -1,3 +1,5 @@
+#include "../Headers/Ficha 4 (Arrays Ordenados).h"
+
 #include <stdio.h>
 
 int ordenado (int v[], int N){
@@ -12,7 +14,7 @@ void merge (int a[], int na, int b[], int nb, int r[]){
 
     int nr = na+nb;
 
-    while(na>=0 && nb>=0){
+    while(na>0 && nb>0){
         if(a[na-1]>b[nb-1]){
             r[nr-1]=a[na-1];
             na--;nr--;
@@ -27,12 +29,18 @@ void merge (int a[], int na, int b[], int nb, int r[]){
     }
 
         if(na==0)
-        while(nr>0)
-        r[nr-1]=b[nb-1];
+        while(nr>0){
+	    r[nr-1]=b[nb-1];
+            nr--;
+            nb--;
+        }
         
         while(nr>0)
-        if(nb==0)
-        r[nr-1]=a[na-1];
+        if(nb==0){
+            r[nr-1]=a[na-1];
+            nr--;
+            na--;
+        }
 }
 
 int partition (int v[], int N, int x){
@@ -57,6 +65,3 @@ int partition (int v[], int N, int x){
 
     return i;    
 }
-
-
-int main(){}

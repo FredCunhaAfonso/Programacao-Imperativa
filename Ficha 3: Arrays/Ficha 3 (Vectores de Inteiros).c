@@ -1,3 +1,5 @@
+#include "../Headers/Ficha 3 (Vectores de Inteiros).h"
+
 #include <stdio.h>
 
 
@@ -26,13 +28,10 @@ int soma (int v[], int N){
 
 
 void inverteArray (int v[], int N){
-    int temp;
 
-    for(int i = 0; i<N/2;i++){
-        temp = v[i];
-        v[i]=v[N-i];
-        v[N-i]=temp;
-    }
+    for(int i = 0; i<N/2;i++)
+    	swapM(&v[i],&v[N-i-1]);
+    	//swap(v,i,N-i-1);
 
 }
 
@@ -54,7 +53,8 @@ void quadrados (int q[], int N){
     q[0]=0;
 
     for(int i = 1; i<N; i++)
-    q[i]=q[i-1]+(2*q[i-1]+1);
+    q[i]=q[i-1]+(2*(i-1)+1);
+    //ou "q[i]=i*i;" ...
 }
 
 
@@ -88,11 +88,4 @@ void TrianguloDePascal(int v[], int N){
 
         printf("\n");
     }
-}
-
-
-int main(){
-    int N=10,v[N];
-    TrianguloDePascal(v,N);
-    return 0;
 }
