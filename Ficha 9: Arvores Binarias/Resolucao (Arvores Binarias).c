@@ -1,5 +1,3 @@
-#include "Resolucao (Arvores Binarias).h"
-
 #include <stdio.h>
 #include <stdlib.h>
 
