@@ -47,6 +47,7 @@ int Sdequeue (SQueue q, int *x){
     if(!vazia){
         *x=q->values[q->front];
         q->front++;
+        q->front%=Max;
         q->length--;
     }
     return vazia;

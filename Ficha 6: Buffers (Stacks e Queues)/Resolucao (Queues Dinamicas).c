@@ -21,6 +21,7 @@ void SinitQueue (DQueue q){
     q->length=0;
     q->size=1;
     q->front=-1;
+    q->values=malloc(sizeof(int));
 }
 
 int SisEmptyQ (DQueue q){

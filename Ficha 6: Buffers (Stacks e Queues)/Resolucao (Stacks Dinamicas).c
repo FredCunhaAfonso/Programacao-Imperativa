@@ -11,6 +11,7 @@ typedef struct dinStack {
 void SinitStack(DStack s){
     s->sp = 0;
     s->size = 1;
+    s->values = malloc(sizeof(int));
 }
 
 int SisEmpty (DStack s){
@@ -41,7 +42,6 @@ int Spush (DStack s, int x){
 int Spop (DStack s, int *x){
     if(!SisEmpty(s)){
     s->sp--;
-    s->size--;
     *x=s->values[s->sp];
     }
 
